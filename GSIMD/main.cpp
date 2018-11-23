@@ -39,23 +39,14 @@ int main()
 	for (size_t i = 0; i < 4; ++i) printf("\tsqrt(%f) = %f\n", array1[i], array3[i]);
 
 #endif
-	GSIMD::PackedInt32 arr = {25, 50, 75, 100};
+	GSIMD::PackedInt32 arr = {25, 50,};
+	GSIMD::PackedInt32 arr2 = { 75, 100 };
 
-	GSIMD::add(arr, arr, arr);
-	for (size_t i = 0; i < 4; ++i)
-		printf("Array[%d]: %d\n", i, arr[i]);
 
-	// GSIMD::sub(arr, arr, arr);
+	GSIMD::add(arr, arr2, arr2);
 	for (size_t i = 0; i < 4; ++i)
-		printf("Array[%d]: %d\n", i, arr[i]);
+		printf("Array[%d]: %d\n", i, arr2[i]);
 
-	GSIMD::mul(arr, arr, arr);
-	for (size_t i = 0; i < 4; ++i)
-		printf("Array[%d]: %d\n", i, arr[i]);
-
-	GSIMD::div(arr, arr, arr);
-	for (size_t i = 0; i < 4; ++i)
-		printf("Array[%d]: %d\n", i, arr[i]);
 
 
 	return 0;
